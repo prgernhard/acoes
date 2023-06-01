@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+nav {
+ background-color: #023047;
+}
+
+nav .brand-logo {
+
+  left: 67px;
+
+}
