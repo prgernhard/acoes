@@ -1,0 +1,29 @@
+body {
+  background-color: #eee
+}
+
+.nav-link:hover {
+  box-sizing: border-box;
+  background: rgba(221, 221, 221, 0.75);
+  /* Padrão/Branca */
+  border-bottom: 2px solid #FFFFFF;
+  color: #023047 !important;
+  font-weight: 700;
+
+}
+
+.nav-link .fa {
+  transition: all 1s
+}
+
+.nav-link:hover .fa {
+  transform: rotate(360deg)
+}
+.sidebar {
+  background-color: #023047;
+}
+
+hr{
+  border: 2px solid #A55307;
+}
+
