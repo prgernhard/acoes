@@ -1,0 +1,41 @@
+{
+  "acoes": [
+    {
+      "id": 314,
+      "nome": "Itau SA",
+      "valor": "100000",
+      "data": "2023-06-01",
+      "dividento": true
+    },
+    {
+      "id": 568,
+      "nome": "",
+      "valor": "50",
+      "data": "2023-06-08T20:19:05.969Z",
+      "dividento": false
+    },
+    {
+      "id": 879,
+      "nome": "",
+      "valor": "055",
+      "data": "2023-06-08T20:30:09.189Z",
+      "dividento": false
+    },
+    {
+      "id": 431,
+      "nome": "bradesco",
+      "valor": "78",
+      "data": "2023-06-08T20:34:39.407Z",
+      "dividento": true
+    }
+  ],
+  "empresas": [
+    {
+      "id": 1,
+      "nome": "Itau SA",
+      "cnpj": "111111111",
+      "tipoEmpresa": "privada",
+      "data": "29/05/2023"
+    }
+  ]
+}
