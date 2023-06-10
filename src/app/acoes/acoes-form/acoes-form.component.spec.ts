@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcoesComponent } from './acoes.component';
+import { AcoesFormComponent } from './acoes-form.component';
 
-describe('AcoesComponent', () => {
-  let component: AcoesComponent;
-  let fixture: ComponentFixture<AcoesComponent>;
+describe('AcoesFormComponent', () => {
+  let component: AcoesFormComponent;
+  let fixture: ComponentFixture<AcoesFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AcoesComponent]
+      declarations: [AcoesFormComponent]
     });
-    fixture = TestBed.createComponent(AcoesComponent);
+    fixture = TestBed.createComponent(AcoesFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
