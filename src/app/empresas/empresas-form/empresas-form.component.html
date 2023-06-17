@@ -1,1 +1,92 @@
-<p>empresas-form works!</p>
+<h1 class="mt-4">Empresas</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">{{ empresa.nome ? 'Edição' : 'Cadastro' }}</li>
+</ol>
+<div class="container">
+    <form [formGroup]="formEmpresa" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf=" success == true">
+                    Ação Salva/Atualizado com sucesso!!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngFor=" let erro of errors">
+                    {{ erro }}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" *ngIf="empresa.id">
+            <div class="col-md-3" hidden>
+                <div class="form-group">
+                    <label hidden>ID:</label>
+                    <input type="text" class="form-control" formControlName="id" hidden name="id"
+                        [ngModel]="empresa.id" />
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Nome: *</label>
+                    <input type="text" class="form-control" formControlName="nome" name="nome"
+                        [ngModel]="empresa.nome" />
+                    <div *ngIf="formEmpresa.get('nome') ?.errors?.['required'] && formEmpresa.get('nome')?.touched"
+                        class="msg">
+                        Nome obrigatório
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>CNPJ: *</label>
+                    <input type="text" class="form-control" formControlName="cnpj" name="cnpj" [ngModel]="empresa.cnpj"
+                        placeholder="00.000.000/0000-00" />
+                    <div *ngIf="formEmpresa.get('cnpj') ?.errors?.['required'] && formEmpresa.get('cnpj')?.touched"
+                        class="msg">
+                        CNPJ obrigatório
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="empresa">Tipo Empresa:</label>
+                    <select class="form-control" id="tipoEmpresa" formControlName="tipoEmpresa"
+                        [(ngModel)]="empresa.tipoEmpresa">
+                        <option>Selecione...</option>
+                        <option name="tipoEmpresa" ngValue="privada">Privada</option>
+                        <option name="tipoEmpresa" ngValue="publica">Publica</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Data:</label>
+                    <input type="text" class="form-control" formControlName="data" name="data"
+                        [ngModel]="empresa.data" />
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12" class="botao">
+                <button type="submit" class="btn btn-success" *ngIf="!empresa.nome" [disabled]="!formEmpresa.valid">
+                    <i class="fa fa-save"></i>&nbsp;Salvar</button>
+
+                <button type="submit" class="btn btn-primary" *ngIf="empresa.nome" [disabled]="!formEmpresa.valid">
+                    <i class="fa fa-sync-alt"></i>&nbsp;Atualizar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger ml-2" (click)="voltarParaListagem()">
+
+                    <i class="fa fa-arrow-left"></i>&nbsp;Listagem
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

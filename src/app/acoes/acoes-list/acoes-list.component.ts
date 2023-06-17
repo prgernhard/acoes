@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AcoesService } from '../../acoes.service';
-import { Acao } from '../acao';
+import { Acao } from '../acoes';
 
 @Component({
   selector: 'app-acoes-list',
@@ -14,27 +14,27 @@ export class AcoesListComponent implements OnInit {
   mensagemSucesso : string = "";
   mensagemErro: string = "";
 
-  constructor(private service: AcoesService,
+  constructor(private service: AcoesService, 
     private router: Router) { }
 
     ngOnInit(): void {
       this.service.getAcoes()
       .subscribe( (resposta : any ) => this.acoes = resposta);
     }
-
+  
     novoCadastro(){
       this.router.navigate(['/acoes/form'])
     }
-
+  
     preparaDelecao(acao:Acao) {
       this.acaoSelecionada = acao;
-
+  
     }
-
+  
     deletarAcao(){
       this.service
       .deletar(this.acaoSelecionada)
-      .subscribe(
+      .subscribe( 
         ( response : any) => {
           this.mensagemSucesso = 'Ação deletada com sucesso!'
           this.ngOnInit();
