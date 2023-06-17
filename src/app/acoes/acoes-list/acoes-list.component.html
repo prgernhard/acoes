@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col">
 
-        <p class="text-titulo">Minhas Ações</p>
+        <p class="text-titulo">Ações</p>
         <button class="btn adicionar" (click)="novoCadastro()">Adicionar</button>
         <table class="table my-5">
           <thead>
@@ -12,6 +12,7 @@
               <th>Nome</th>
               <th>Valor Ação</th>
               <th>Data Adicionada</th>
+              <th>Empresa</th>
               <th>Dividendo</th>
               <th>Ação</th>
             </tr>
@@ -22,17 +23,28 @@
               <td>{{ acao.nome }}</td>
               <td>{{ acao.valor }}</td>
               <td>{{ acao.data }}</td>
-              <td *ngIf=acao.dividento><div class="opcaoSim"></div><span class="texto-opcao">Sim</span></td>
-              <td *ngIf=!acao.dividento><div class="opcaoNao"></div><span class="texto-opcao">Não</span></td>
+              <td>{{ acao.empresa }}</td>
+              <td *ngIf=acao.dividento>
+                <div class="opcaoSim"></div><span class="texto-opcao">Sim</span>
+              </td>
+              <td *ngIf=!acao.dividento>
+                <div class="opcaoNao"></div><span class="texto-opcao">Não</span>
+              </td>
               <td>
 
-                <svg routerLink="/acoes/form/{{ acao.id }}" width="20" height="20" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M27.4195 10.3069L20.4332 3.40283L22.7346 1.10146C23.3647 0.471319 24.139 0.15625 25.0573 0.15625C25.9757 0.15625 26.7494 0.471319 27.3784 1.10146L29.6798 3.40283C30.3099 4.03296 30.6387 4.79351 30.6661 5.68447C30.6935 6.57543 30.3921 7.33543 29.762 7.96447L27.4195 10.3069ZM2.26884 30.1562C1.80309 30.1562 1.4124 29.9984 1.09679 29.6828C0.78117 29.3672 0.62391 28.9771 0.625006 28.5124V23.8686C0.625006 23.6494 0.666102 23.4368 0.748293 23.2308C0.830485 23.0247 0.953773 22.8401 1.11816 22.6768L18.0497 5.74529L25.036 12.7316L8.10446 29.6631C7.94007 29.8275 7.75542 29.9508 7.55048 30.033C7.34555 30.1152 7.13295 30.1562 6.91268 30.1562H2.26884Z" fill="#A55307"/>
-                  </svg>
+                <svg routerLink="/acoes/form/{{ acao.id }}" width="20" height="20" viewBox="0 0 31 31" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M27.4195 10.3069L20.4332 3.40283L22.7346 1.10146C23.3647 0.471319 24.139 0.15625 25.0573 0.15625C25.9757 0.15625 26.7494 0.471319 27.3784 1.10146L29.6798 3.40283C30.3099 4.03296 30.6387 4.79351 30.6661 5.68447C30.6935 6.57543 30.3921 7.33543 29.762 7.96447L27.4195 10.3069ZM2.26884 30.1562C1.80309 30.1562 1.4124 29.9984 1.09679 29.6828C0.78117 29.3672 0.62391 28.9771 0.625006 28.5124V23.8686C0.625006 23.6494 0.666102 23.4368 0.748293 23.2308C0.830485 23.0247 0.953773 22.8401 1.11816 22.6768L18.0497 5.74529L25.036 12.7316L8.10446 29.6631C7.94007 29.8275 7.75542 29.9508 7.55048 30.033C7.34555 30.1152 7.13295 30.1562 6.91268 30.1562H2.26884Z"
+                    fill="#A55307" />
+                </svg>
                 &nbsp;
-                <svg data-bs-toggle="modal" data-bs-target="#modalDelecao" (click)="preparaDelecao(acao)" width="20" height="20" viewBox="0 0 32 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M27.8934 11.72C28.2423 11.72 28.5588 11.8722 28.809 12.1295C29.0422 12.4042 29.1596 12.7455 29.1256 13.106C29.1256 13.225 28.1929 25.0199 27.6602 29.9846C27.3266 33.0313 25.3625 34.881 22.4164 34.9318C20.1511 34.9825 17.9369 35 15.7566 35C13.442 35 11.1783 34.9825 8.98111 34.9318C6.13372 34.8635 4.16795 32.9805 3.85138 29.9846C3.30335 25.0024 2.38769 13.225 2.37067 13.106C2.35365 12.7455 2.46938 12.4042 2.70426 12.1295C2.93572 11.8722 3.26931 11.72 3.61991 11.72H27.8934ZM19.3633 0C20.9104 0 22.2924 1.07974 22.6923 2.61972L22.9783 3.89721C23.2097 4.93845 24.1118 5.67519 25.15 5.67519H30.2525C30.9332 5.67519 31.5 6.24044 31.5 6.95968V7.62467C31.5 8.32642 30.9332 8.90916 30.2525 8.90916H1.24924C0.566755 8.90916 0 8.32642 0 7.62467V6.95968C0 6.24044 0.566755 5.67519 1.24924 5.67519H6.35174C7.38824 5.67519 8.29028 4.93845 8.52345 3.89896L8.79066 2.70547C9.20594 1.07974 10.5726 0 12.1367 0H19.3633Z" fill="#990505"/>
-                  </svg>
+                <svg data-bs-toggle="modal" data-bs-target="#modalDelecao" (click)="preparaDelecao(acao)" width="20"
+                  height="20" viewBox="0 0 32 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M27.8934 11.72C28.2423 11.72 28.5588 11.8722 28.809 12.1295C29.0422 12.4042 29.1596 12.7455 29.1256 13.106C29.1256 13.225 28.1929 25.0199 27.6602 29.9846C27.3266 33.0313 25.3625 34.881 22.4164 34.9318C20.1511 34.9825 17.9369 35 15.7566 35C13.442 35 11.1783 34.9825 8.98111 34.9318C6.13372 34.8635 4.16795 32.9805 3.85138 29.9846C3.30335 25.0024 2.38769 13.225 2.37067 13.106C2.35365 12.7455 2.46938 12.4042 2.70426 12.1295C2.93572 11.8722 3.26931 11.72 3.61991 11.72H27.8934ZM19.3633 0C20.9104 0 22.2924 1.07974 22.6923 2.61972L22.9783 3.89721C23.2097 4.93845 24.1118 5.67519 25.15 5.67519H30.2525C30.9332 5.67519 31.5 6.24044 31.5 6.95968V7.62467C31.5 8.32642 30.9332 8.90916 30.2525 8.90916H1.24924C0.566755 8.90916 0 8.32642 0 7.62467V6.95968C0 6.24044 0.566755 5.67519 1.24924 5.67519H6.35174C7.38824 5.67519 8.29028 4.93845 8.52345 3.89896L8.79066 2.70547C9.20594 1.07974 10.5726 0 12.1367 0H19.3633Z"
+                    fill="#990505" />
+                </svg>
               </td>
             </tr>
           </tbody>
@@ -42,21 +54,21 @@
 
     <div id="modalDelecao" class="modal fade" role="dialog">
       <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4>Confirmação</h4>
-              </div>
-              <div class="modal-body" *ngIf="acaoSelecionada">
-               Confirma a deleção do(a) Ação {{acaoSelecionada.nome}}?
-              </div>
-              <div class="modal-footer">
-                  <button class="btn btn-success" (click)="deletarAcao()" data-bs-dismiss="modal">Confirmar</button>
-                  <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-              </div>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Confirmação</h4>
           </div>
+          <div class="modal-body" *ngIf="acaoSelecionada">
+            Confirma a deleção do(a) Ação {{acaoSelecionada.nome}}?
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" (click)="deletarAcao()" data-bs-dismiss="modal">Confirmar</button>
+            <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
       </div>
 
-  </div>
+    </div>
 
   </div>
 </section>

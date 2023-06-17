@@ -1,9 +1,9 @@
 <h1 class="mt-4">Ações</h1>
-    <ol class="breadcrumb mb-4">
+<ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">{{ acao.nome ? 'Edição' : 'Cadastro' }}</li>
 </ol>
 <div class="container">
-    <form #acaoForm="ngForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formAcao" (ngSubmit)="onSubmit()">
 
         <div class="row">
             <div class="col-md-12">
@@ -18,17 +18,20 @@
         </div>
 
         <div class="row" *ngIf="acao.id">
-            <div class="col-md-6">
+            <div class="col-md-6" hidden>
                 <div class="form-group">
-                   <label>ID:</label>
-                   <input type="text" class="form-control" disabled="true" [ngModel]="acao.id" name="id" />
+                    <label>ID:</label>
+                    <input type="text" class="form-control" formControlName="id" name="id" [ngModel]="acao.id" />
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
-                   <label>Nome:</label>
-                   <input type="text" class="form-control" [(ngModel)]="acao.nome" name="nome"  />
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" formControlName="nome" name="nome" [ngModel]="acao.nome" />
+                </div>
+                <div *ngIf="formAcao.get('nome') ?.errors?.['required'] && formAcao.get('nome')?.touched" class="msg">
+                    Nome obrigatório
                 </div>
             </div>
         </div>
@@ -36,46 +39,64 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                   <label>Valor: *</label>
-                   <input type="text" class="form-control" [(ngModel)]="acao.valor" name="valor" />
+                    <label>Valor: *</label>
+                    <input type="text" class="form-control" formControlName="valor" name="valor" [ngModel]="acao.valor"
+                        placeholder="R$ 00.00" />
+                </div>
+                <div *ngIf="formAcao.get('valor') ?.errors?.['required'] && formAcao.get('valor')?.touched" class="msg">
+                    Valor obrigatório
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                   <label>Data: *</label>
-                   <input type="text" class="form-control" [(ngModel)]="acao.data" name="data" />
+                    <label>Data: *</label>
+                    <input type="text" class="form-control" formControlName="data" name="data" [ngModel]="acao.data" />
                 </div>
+
             </div>
         </div>
         <div class="row">
             <label>Dividento: *</label>
             <div class="col-md-6">
-                <div class="form-check" >
-                    <input class="form-check-input" type="radio" [value]="true" [(ngModel)]="acao.dividento" name="dividento" id="sim">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" [value]="true" formControlName="dividento"
+                        name="dividento" id="sim" [(ngModel)]="acao.dividento">
                     <label class="form-check-label" for="sim">
-                    Sim
+                        Sim
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" [value]="false" name="dividento" id="nao" [(ngModel)] ="acao.dividento" checked>
+                    <input class="form-check-input" type="radio" [value]="false" name="dividento" id="nao"
+                        formControlName="dividento" [(ngModel)]="acao.dividento" checked>
                     <label class="form-check-label" for="nao">
-                    Não
+                        Não
                     </label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="empresa">Empresa:</label>
+                    <select class="form-control" id="empresa" formControlName="empresa" [(ngModel)]="acao.empresa">
+                        <option>Selecione...</option>
+                        <option name="empresa" ngValue="{{empresa.nome}}" *ngFor="let empresa of empresas">{{
+                            empresa.nome }}</option>
+                    </select>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-success" *ngIf="!acao.nome">
+            <div class="col-md-12" class="botao">
+                <button type="submit" class="btn btn-success" *ngIf="!acao.nome" [disabled]="!formAcao.valid">
                     <i class="fa fa-save"></i>&nbsp;Salvar</button>
-                <button type="submit" class="btn btn-primary" *ngIf="acao.nome">
-                <i class="fa fa-sync-alt"></i>&nbsp;Atualizar</button>
 
-                    <button type="button"  class="btn btn-danger ml-2" (click)="voltarParaListagem()">
+                <button type="submit" class="btn btn-primary" *ngIf="acao.nome" [disabled]="!formAcao.valid">
+                    <i class="fa fa-sync-alt"></i>&nbsp;Atualizar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger ml-2" (click)="voltarParaListagem()">
 
-                        <i class="fa fa-arrow-left"></i>&nbsp;Listagem
-                    </button>
+                    <i class="fa fa-arrow-left"></i>&nbsp;Listagem
+                </button>
             </div>
 
         </div>

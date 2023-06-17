@@ -27,6 +27,14 @@
       "valor": "78",
       "data": "2023-06-08T20:34:39.407Z",
       "dividento": true
+    },
+    {
+      "id": 142,
+      "nome": "pppppp",
+      "valor": "100",
+      "data": "2023-06-17T17:54:26.383Z",
+      "dividento": false,
+      "empresa": "Itau SA"
     }
   ],
   "empresas": [
@@ -36,6 +44,13 @@
       "cnpj": "111111111",
       "tipoEmpresa": "privada",
       "data": "29/05/2023"
+    },
+    {
+      "id": 357,
+      "nome": "bradesco",
+      "cnpj": "99.999.999/0001-12",
+      "tipoEmpresa": "privada",
+      "data": "2023-06-17T17:55:26.186Z"
     }
   ]
 }
