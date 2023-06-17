@@ -1,13 +1,17 @@
+
+
+
 header .container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 header h1 {
-  color: #fff !important;
-  margin: 20px 0;
-  font-size: 24px;
+    color: #fff !important;
+    margin: 20px 0;
+    font-size: 24px;
 }
+
 h1,
 h2,
 h3,
@@ -28,22 +32,23 @@ h3 {
     text-transform: uppercase;
     margin: 10px 0;
 }
+
 table img {
-  width: 220px;
-  border: 1px solid #ccc !important;
+    width: 220px;
+    border: 1px solid #ccc !important;
 }
 
 .adicionar {
-  background: #A55307 !important;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-  border-radius: 5px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+    background: #A55307 !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
 
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .text-titulo {
@@ -55,23 +60,25 @@ line-height: 51px;
 
 color: #000000;
 }
+
 .opcaoSim {
-  width: 15px;
-  height: 15px;
-  background: #227D47;
-  border-radius: 50px;
-  position: absolute;
-  margin-top: 4px;
+    width: 15px;
+    height: 15px;
+    background: #227D47;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 4px;
 }
 
 .opcaoNao {
-  width: 15px;
-  height: 15px;
-  background: #ce0707;
-  border-radius: 50px;
-  position: absolute;
-  margin-top: 4px;
+    width: 15px;
+    height: 15px;
+    background: #ce0707;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 4px;
 }
+
 .texto-opcao {
-  margin-left: 25px;
+    margin-left: 25px;
 }

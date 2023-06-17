@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Acao } from './acoes/acao';
+import { Acao } from './acoes/acoes';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
