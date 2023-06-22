@@ -20,9 +20,9 @@
           <tbody>
             <tr *ngFor="let acao of acoes">
               <td>{{ acao.id }}</td>
-              <td>{{ acao.nome }}</td>
-              <td>{{ acao.valor }}</td>
-              <td>{{ acao.data }}</td>
+              <td>{{ acao.nome | uppercase}}</td>
+              <td>{{ acao.valor | currency:'BRL'}}</td>
+              <td>{{ acao.data | date:'dd/MM/yyyy'}}</td>
               <td>{{ acao.empresa }}</td>
               <td *ngIf=acao.dividento>
                 <div class="opcaoSim"></div><span class="texto-opcao">Sim</span>
