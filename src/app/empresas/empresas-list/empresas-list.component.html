@@ -17,10 +17,10 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let empresa of empresas">
-                            <td>{{ empresa.nome }}</td>
+                            <td>{{ empresa.nome | uppercase}}</td>
                             <td>{{ empresa.cnpj }}</td>
                             <td>{{ empresa.tipoEmpresa }}</td>
-                            <td>{{ empresa.data }}</td>
+                            <td>{{ empresa.data | date:'dd/MM/yyyy'}}</td>
                             <td>
 
                                 <svg routerLink="/empresas/form/{{ empresa.id }}" width="20" height="20"
