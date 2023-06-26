@@ -4,8 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build  --base-href=/acoes/",
+    "ghpages": "angular-cli-ghpages --dir=dist/acoes",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json ",
     "test": "ng test"
   },
   "private": true,
