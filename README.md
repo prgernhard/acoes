@@ -19,9 +19,13 @@ Angular version 16.0.1
 	<p align="center">Clique aqui para visitar o prototipo criado no Figma!</p>
  </a>
   
- <a href="https://www.figma.com/proto/1FZT6zSICRRF5ruaBOZEG9/FinanVest?type=design&node-id=2-9&scaling=scale-down&page-id=1%3A2&starting-point-node-id=2%3A9" target="_blank">
+ <a href="https://prgernhard.github.io/acoes/home" target="_blank">
 	<p align="center">Clique aqui para visitar o projeto no GithubPages - Deploy!</p>
-  </a>
+ </a>
+
+  <a href="https://github.com/prgernhard/acoes/blob/main/definicao-projeto-acao-paulo.pdf" target="_blank">
+	<p align="center">Clique aqui para ver os topicos detalhados do projeto</p>
+ </a>
   
 <p align="center"> FinanVest, é um sistema para cadastro de empresas, e ações das mesmas, facilitando assim a centralização de todas as ações investidas em varias plataformas disponivel no mercado. </p>
 <br>
