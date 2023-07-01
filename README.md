@@ -23,7 +23,7 @@ Angular version 16.0.1
 	<p align="center">Clique aqui para visitar o projeto no GithubPages - Deploy!</p>
  </a>
 
-  <a href="https://github.com/prgernhard/acoes/blob/main/definicao-projeto-acao-paulo.pdf" target="_blank">
+  <a href="definicao-projeto-acao-paulo.pdf" target="_blank">
 	<p align="center">Clique aqui para ver os topicos detalhados do projeto</p>
  </a>
   
